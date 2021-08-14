@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/server.ts",
     "build": "rm -rf build/ && tsc",
-    "test": "jest --coverage"
+    "test": "jest --config=src/jest.config.ts"
   },
   "repository": "https://github.com/jrodrigopuca/utest.git",
   "author": "jarp",
@@ -24,7 +24,9 @@
   },
   "devDependencies": {
     "@types/jest": "^27.0.0",
+    "@types/supertest": "^2.0.11",
     "jest": "^27.0.6",
-    "supertest": "^6.1.5"
+    "supertest": "^6.1.5",
+    "ts-jest": "^27.0.4"
   }
 }
