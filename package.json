@@ -23,6 +23,7 @@
     "typescript": "^4.3.5"
   },
   "devDependencies": {
+    "@jest-mock/express": "^1.4.4",
     "@types/jest": "^27.0.0",
     "@types/supertest": "^2.0.11",
     "jest": "^27.0.6",
