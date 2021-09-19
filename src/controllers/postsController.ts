@@ -16,11 +16,14 @@ const getPosts = async (req: Request, res: Response, nxt:NextFunction)=>{
 }
 
 // traer una único post
-const getPost = async (req: Request, res: Response, nxt: NextFunction)=>{
+const getPost = async ( req: Request, res: Response, nxt: NextFunction)=>{
+    if (!req.params.id) return res.status(400).json({message:'Id is required'})
     let id:string = req.params.id;
+
     let result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
     let myPost: Post = result.data;
-    return res.status(200).json({result: myPost})
+
+    res.status(200).json({result: myPost});
 }
 
 // actualizar
@@ -48,7 +51,7 @@ const addPost = async (req: Request, res: Response, nxt: NextFunction)=>{
     return res.status(200).json({result: response.data})
 }
 
-export default {
+export {
     getPost,
     getPosts,
     updatePost,
